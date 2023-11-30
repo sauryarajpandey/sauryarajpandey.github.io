@@ -40,7 +40,7 @@ import rubyrails from "./tech/rubyrails.png";
 import okta from "./tech/okta.png";
 import auth0 from "./tech/auth0.png";
 import asterdio from "./company/asterdio.jpg";
-import dcc from "./company/dcc.png";
+
 import beyondid from "./company/beyondid.jpg";
 import infodevelopers from "./company/infodevelopers.jpg";
 
@@ -94,7 +94,6 @@ export {
   nyeusi,
   space,
   asterdio,
-  dcc,
   beyondid,
   infodevelopers,
   okta,
