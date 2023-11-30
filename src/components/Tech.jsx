@@ -4,7 +4,8 @@ import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
-
+import SchoolIcon from "@mui/icons-material/School";
+import Typography from "@mui/material/Typography";
 const Tech = () => {
   const technologiesadded = [
     { name: "JAVASCRIPT", percentage: 85 },
@@ -21,6 +22,48 @@ const Tech = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
+        <div className={styles.sectionHeadTextLight}>
+          Education
+          <Typography
+            variant="h5"
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            <b>
+              <a
+                href="https://vit.ac.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  textDecoration: "none",
+                }}
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Vellore_Institute_of_Technology_seal_2017.svg/800px-Vellore_Institute_of_Technology_seal_2017.svg.png"
+                  alt="VIT Logo"
+                  style={{
+                    width: "85px",
+                    height: "auto",
+                    marginRight: "10px",
+                    filter: "drop-shadow(2px 2px 4px #4F80CF)",
+
+                    padding: "1px",
+                  }}
+                />
+                <u>Vellore Institute of Technology (2018-2022)</u>
+              </a>
+            </b>
+          </Typography>
+          <Typography variant="h6">
+            <div style={{ marginLeft: "90px" }}>
+              <SchoolIcon style={{ fontSize: 40, marginRight: "10px" }} />{" "}
+              Bachelor&apos;s in Computer Science and Engineering
+            </div>
+          </Typography>
+        </div>
+        <br></br>
+        <br></br>
         <p className={styles.sectionSubTextLight}>My skills</p>
         <h2 className={styles.sectionHeadTextLight}>Technologies.</h2>
       </motion.div>

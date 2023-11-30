@@ -9,8 +9,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import BookIcon from "@mui/icons-material/Book";
-import PermContactCalendarIcon from "@mui/icons-material/PermContactCalendar";
+
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -198,60 +197,172 @@ const Contact = () => {
         </form>
       </motion.div>
       <div>
-
+        <iframe
+          width="380"
+          height="316"
+          id="gmap_canvas"
+          style={{ marginTop: "70px" }}
+          src="https://maps.google.com/maps?width=380&amp;height=316&amp;hl=en&amp;q=Jagannath%20Temple%20Mahankal,%20Golfutar%20Main%20Road,%20Hattigauda,%20Buddhanilkantha%20Kathmandu+(Me)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        ></iframe>
         <br></br>
         <h1 style={{ marginBottom: "5px" }}>
           <b>Socials</b>
         </h1>
-        <a
-          href="https://www.linkedin.com/in/saurya-raj-pandey-77a1a9160/"
-          target="_blank"
-          rel="noreferrer"
-          style={{ marginRight: "10px" }}
-        >
-          <LinkedInIcon style={{ fontSize: "30" }} />
-        </a>
-        <a
-          href="https://github.com/Saurya-Raj-Pandey"
-          target="_blank"
-          rel="noreferrer"
-          style={{ marginRight: "10px" }}
-        >
-          <GitHubIcon style={{ fontSize: "30" }} />
-        </a>
-        <a
-          href="https://join.skype.com/invite/u8gyUIgJnJgQ"
-          target="_blank"
-          rel="noreferrer"
-          style={{ marginRight: "10px" }}
-        >
-          <PermContactCalendarIcon style={{ fontSize: "30" }} />
-        </a>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <a
+            href="https://www.linkedin.com/in/saurya-raj-pandey-77a1a9160/"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              marginRight: "10px",
+              position: "relative",
+              display: "inline-block",
+              textDecoration: "none",
+            }}
+            title="LinkedIn"
+            onMouseOver={(e) => {
+              e.currentTarget.insertAdjacentHTML(
+                "beforeend",
+                `<span style="position: absolute; z-index: 1; background: black; color: white; padding: 4px 8px; border-radius: 20px; top: 100%; left: 50%; transform: translateX(-50%); white-space: nowrap;">${e.currentTarget.getAttribute(
+                  "title"
+                )}</span>`
+              );
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector("span").remove();
+            }}
+          >
+            <LinkedInIcon style={{ fontSize: "30" }} />
+          </a>
 
-        <a
-          href="https://sauryapandey.medium.com/"
-          target="_blank"
-          rel="noreferrer"
-          style={{ marginRight: "10px" }}
-        >
-          <BookIcon style={{ fontSize: "30" }} />
-        </a>
+          <a
+            href="https://github.com/Saurya-Raj-Pandey"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              marginRight: "10px",
+              position: "relative",
+              display: "inline-block",
+              textDecoration: "none",
+            }}
+            title="Github"
+            onMouseOver={(e) => {
+              e.currentTarget.insertAdjacentHTML(
+                "beforeend",
+                `<span style="position: absolute; z-index: 1; background: black; color: white; padding: 4px 8px; border-radius: 20px; top: 100%; left: 50%; transform: translateX(-50%); white-space: nowrap;">${e.currentTarget.getAttribute(
+                  "title"
+                )}</span>`
+              );
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector("span").remove();
+            }}
+          >
+            <GitHubIcon style={{ fontSize: "30" }} />
+          </a>
+          <a
+            href="https://join.skype.com/invite/u8gyUIgJnJgQ"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              marginRight: "10px",
+              position: "relative",
+              display: "inline-block",
+              textDecoration: "none",
+            }}
+            title="Skype"
+            onMouseOver={(e) => {
+              e.currentTarget.insertAdjacentHTML(
+                "beforeend",
+                `<span style="position: absolute; z-index: 1; background: black; color: white; padding: 4px 8px; border-radius: 20px; top: 100%; left: 50%; transform: translateX(-50%); white-space: nowrap;">${e.currentTarget.getAttribute(
+                  "title"
+                )}</span>`
+              );
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector("span").remove();
+            }}
+          >
+            <img src="/src/assets/socials/skype.svg" />
+          </a>
 
-        <a
-          href="https://instagram.com/saurya_pandey_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"
-          target="_blank"
-          rel="noreferrer"
-          style={{ marginRight: "10px" }}
-        >
-          <InstagramIcon style={{ fontSize: "30" }} />
-        </a>
-        <a
-          href="https://www.facebook.com/saurya.raj.pandey?mibextid=ZbWKwL"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FacebookIcon style={{ fontSize: "30" }} />
-        </a>
+          <a
+            href="https://sauryapandey.medium.com/"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              marginRight: "10px",
+              position: "relative",
+              display: "inline-block",
+              textDecoration: "none",
+            }}
+            title="Medium"
+            onMouseOver={(e) => {
+              e.currentTarget.insertAdjacentHTML(
+                "beforeend",
+                `<span style="position: absolute; z-index: 1; background: black; color: white; padding: 4px 8px; border-radius: 20px; top: 100%; left: 50%; transform: translateX(-50%); white-space: nowrap;">${e.currentTarget.getAttribute(
+                  "title"
+                )}</span>`
+              );
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector("span").remove();
+            }}
+          >
+            <img src="/src/assets/socials/medium.svg" />
+          </a>
+
+          <a
+            href="https://instagram.com/saurya_pandey_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              marginRight: "10px",
+              position: "relative",
+              display: "inline-block",
+              textDecoration: "none",
+            }}
+            title="Instagram"
+            onMouseOver={(e) => {
+              e.currentTarget.insertAdjacentHTML(
+                "beforeend",
+                `<span style="position: absolute; z-index: 10; background: black; color: white; padding: 4px 8px; border-radius: 20px; top: 100%; left: 50%; transform: translateX(-80%); white-space: nowrap;">${e.currentTarget.getAttribute(
+                  "title"
+                )}</span>`
+              );
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector("span").remove();
+            }}
+          >
+            <InstagramIcon style={{ fontSize: "30" }} />
+          </a>
+          <a
+            href="https://www.facebook.com/saurya.raj.pandey?mibextid=ZbWKwL"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              marginRight: "10px",
+              position: "relative",
+              display: "inline-block",
+              textDecoration: "none",
+            }}
+            title="Facebook"
+            onMouseOver={(e) => {
+              e.currentTarget.insertAdjacentHTML(
+                "beforeend",
+                `<span style="position: absolute; z-index: 1; background: black; color: white; padding: 4px 8px; border-radius: 20px; top: 100%; left: 50%; transform: translateX(-50%); white-space: nowrap;">${e.currentTarget.getAttribute(
+                  "title"
+                )}</span>`
+              );
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector("span").remove();
+            }}
+          >
+            <FacebookIcon style={{ fontSize: "30" }} />
+          </a>
+        </div>
       </div>
     </div>
   );
