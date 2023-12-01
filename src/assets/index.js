@@ -23,21 +23,21 @@ import resume from "./icons/resume.png";
 import send from "./icons/send.png";
 import sendHover from "./icons/sendHover.png";
 
-import css from "./tech/css.png";
+import css from "/src/assets/tech/css.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
 import git from "./tech/git.png";
-import html from "./tech/html.png";
-import javascript from "./tech/javascript.png";
+import html from "/src/assets/tech/html.png";
+import javascript from "/src/assets/tech/javascript.png";
 import nodejs from "./tech/nodejs.png";
-import reactjs from "./tech/reactjs.png";
+import reactjs from "/src/assets/tech/reactjs.png";
 import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
+import typescript from "/src/assets/tech/typescript.png";
 import graphql from "./tech/graphql.png";
 import postgresql from "./tech/postgresql.png";
 import rubyrails from "./tech/rubyrails.png";
-import okta from "./tech/okta.png";
+import okta from "/src/assets/tech/okta.png";
 import auth0 from "./tech/auth0.png";
 import asterdio from "./company/asterdio.jpg";
 
