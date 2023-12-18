@@ -10,12 +10,12 @@ const Tech = () => {
   const technologiesadded = [
     { name: "JAVASCRIPT", percentage: 85 },
     { name: "TYPESCRIPT", percentage: 85 },
-    { name: "CSS", percentage: 50 },
-    { name: "HTML", percentage: 75 },
+    { name: "CSS", percentage: 70 },
+    { name: "HTML", percentage: 85 },
     { name: "REACTJS", percentage: 85 },
     { name: "NODE JS", percentage: 80 },
     { name: "MONGODB", percentage: 70 },
-    { name: "DOCKER", percentage: 30 },
+    { name: "DOCKER", percentage: 50 },
     { name: "PostgreSQL", percentage: 70 },
   ];
 
@@ -77,9 +77,27 @@ const Tech = () => {
       </div>
       <div className="bg-black bg-opacity-10 p-4 rounded shadow-lg mt-6">
         <h3 className={styles.sectionHeadTextLight}>Technology Proficiency</h3>
-        <ul>
+        {/* <ul>
           {technologiesadded.map((technology) => (
             <li key={technology.name} className="mb-2">
+              <div className="flex justify-between">
+                <span>{technology.name}</span>
+                <span className="font-semibold">{technology.percentage}%</span>
+              </div>
+              <div className="relative pt-1">
+                <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-teal-200">
+                  <div
+                    style={{ width: `${technology.percentage}%` }}
+                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500"
+                  ></div>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul> */}
+        <ul>
+          {technologiesadded.map((technology) => (
+            <li key={technology.name} className="mb-2 py-2 px-4 rounded-lg">
               <div className="flex justify-between">
                 <span>{technology.name}</span>
                 <span className="font-semibold">{technology.percentage}%</span>

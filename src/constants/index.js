@@ -14,11 +14,6 @@ import {
   docker,
   postgresql,
   graphql,
-  komikult,
-  leaderboard,
-  math,
-  movie,
-  nyeusi,
   asterdio,
   beyondid,
   infodevelopers,
@@ -50,10 +45,7 @@ const services = [
     title: "Backend Developer",
     icon: backend,
   },
-  // {
-  //   title: 'UI/UX Design',
-  //   icon: ux,
-  // },
+
   {
     title: "Software Prototyping",
     icon: prototyping,
@@ -164,9 +156,6 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: komikult,
-    repo: "https://github.com/shaqdeff/KomiKult",
-    demo: "https://shaqdeff.github.io/KomiKult/",
   },
   {
     id: "project-2",
@@ -187,9 +176,6 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: leaderboard,
-    repo: "https://github.com/shaqdeff/Leaderboard",
-    demo: "../components/Project/One",
   },
   {
     id: "project-3",
@@ -209,9 +195,6 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: math,
-    repo: "https://github.com/shaqdeff/Math-Magicians",
-    demo: "https://inspiring-medovik-37d3b3.netlify.app/",
   },
   {
     id: "project-4",
@@ -231,9 +214,6 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: movie,
-    repo: "https://github.com/shaqdeff/Movie-Metro",
-    demo: "https://movie-metro.netlify.app/",
   },
   {
     id: "project-5",
@@ -254,9 +234,6 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: nyeusi,
-    repo: "https://github.com/shaqdeff/Nyeusi-Fest-Site",
-    demo: "https://shaqdeff.github.io/Nyeusi-Fest-Site/",
   },
 ];
 

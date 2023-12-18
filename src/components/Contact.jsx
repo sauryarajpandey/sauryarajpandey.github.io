@@ -58,7 +58,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate the form before submitting
     if (!validateForm()) {
       return;
     }
