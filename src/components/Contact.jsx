@@ -235,7 +235,7 @@ const Contact = () => {
           </a>
 
           <a
-            href="https://github.com/Saurya-Raj-Pandey"
+            href="https://github.com/sauryarajpandey"
             target="_blank"
             rel="noreferrer"
             style={{
