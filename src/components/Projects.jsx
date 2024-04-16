@@ -6,33 +6,34 @@ import { fadeIn, textVariant } from "../utils/motion";
 
 const projectsDone = [
   {
-    title: "GymFit",
+    title: "Service Management",
     description:
-      "A website that lets users create and join challenges for different activities, view leaderboards, get notifications, and compete with other members in different challenges.",
+      "The web application is used from project scoping to service allocation on the product, enabling swift and effective generation of accurate management.",
+    tech: "Tech: NodeJS, ReactJS, MYSQL.",
+  },
+  {
+    title: "Hey!Sruthi",
+    description:
+      "The web application manages the bonus calculation of the employees in a company quarterly and yearly. It also facilitates chatting within the application for individual users, allowing them to add comments to their bonuses",
+    tech: "Tech: NestJS, ReactJS, Prisma(ORM), MYSQL.",
+  },
+  {
+    title: "Chat Room",
+    description:
+      "A chat room where users could log into the application using Google, ensuring encrypted communication. It also includes a video calling feature with screen sharing capabilities, along with the ability to share documents within the chat",
     tech: "Tech: NodeJS, ReactJS, MongoDB.",
-  },
-  {
-    title: "E-Commerce Website",
-    description: "Shopping cart built with MERN stack.",
-    tech: "Tech: NodeJS, ReactJS, MongoDB, Redux.",
-  },
-  {
-    title: "Blog Website",
-    description:
-      "I worked on an application where you can connect different email accounts and view them all on one page.",
-    tech: "Tech: NodeJS, ReactJS, MongoDB, Redux.",
   },
   {
     title: "Real-time application For Email Client",
     description:
-      "A blog page where the user can post a blog and edit the blog that the user has written.",
-    tech: "Tech: Java, JavaFX, CSS, Java Mail.",
+      "Worked on an application where you can connect different email accounts and view them all on one page.",
+    tech: "Tech: Java, JavaFX, Java Mail.",
   },
   {
-    title: "COVID-19 Tracker",
+    title: "InkedScribe",
     description:
-      "I worked on a COVID-19 live data tracking project on a map, which provides the total number of infections in different regions.",
-    tech: "Tech: NodeJS, ReactJS, MongoDB",
+      "A web application where you can view the contents of various articles on different topics that can be added by different users once they are logged in. It also includes a comment and like feature",
+    tech: "Tech: NodeJS, ReactJS, MYSQL",
   },
   {
     title: "Weapon detection using machine learning",

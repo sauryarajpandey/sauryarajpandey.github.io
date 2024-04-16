@@ -9,6 +9,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { successToast } from "./toast";
 
 const Contact = () => {
   const formRef = useRef();
@@ -80,7 +81,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert(
+          successToast(
             "Thank you. I have received your message and will get back to you as soon as possible."
           );
 
