@@ -19,6 +19,11 @@ import {
   infodevelopers,
   okta,
   auth0,
+  consulting,
+  thirdParty,
+  webApplicationDevelopment,
+  projectManagement,
+  mobileApplication,
 } from "../assets";
 
 export const navLinks = [
@@ -38,6 +43,10 @@ export const navLinks = [
 
 const services = [
   {
+    title: "Web Applicaiton Development",
+    icon: webApplicationDevelopment,
+  },
+  {
     title: "Frontend Developer",
     icon: frontend,
   },
@@ -47,8 +56,24 @@ const services = [
   },
 
   {
+    title: "Mobile Application Development",
+    icon: mobileApplication,
+  },
+  {
     title: "Software Prototyping",
     icon: prototyping,
+  },
+  {
+    title: "Third-Party Intregration",
+    icon: thirdParty,
+  },
+  {
+    title: "Consulting",
+    icon: consulting,
+  },
+  {
+    title: "Project Management",
+    icon: projectManagement,
   },
 ];
 
@@ -136,5 +161,14 @@ const experiences = [
     date: "Nov 2020- Jan 2021",
   },
 ];
+const educations = [
+  {
+    title: " Bachelor's in Computer Science and Engineering",
+    schoolname: "Vellore Institute of Technology",
+    icon: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Vellore_Institute_of_Technology_seal_2017.svg/800px-Vellore_Institute_of_Technology_seal_2017.svg.png",
+    iconBg: "#f2fcfc",
+    date: "2018 - 2022",
+  },
+];
 
-export { services, technologies, experiences };
+export { services, technologies, experiences, educations };

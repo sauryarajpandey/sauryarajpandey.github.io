@@ -8,7 +8,7 @@ import {
   Tech,
   Projects,
 } from "./components";
-import One from "./components/Project/One";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
@@ -44,6 +44,7 @@ const App = () => {
           <Contact />
         </div>
       </div>
+      <ToastContainer />
     </BrowserRouter>
   );
 };

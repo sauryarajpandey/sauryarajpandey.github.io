@@ -35,17 +35,21 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import graphql from "./tech/graphql.png";
 import postgresql from "./tech/postgresql.png";
-import rubyrails from "./tech/rubyrails.png";
 import okta from "./tech/okta.png";
 import auth0 from "./tech/auth0.png";
 import asterdio from "./company/asterdio.jpg";
 import beyondid from "./company/beyondid.jpg";
 import infodevelopers from "./company/infodevelopers.jpg";
-
+import consulting from "./icons/consulting.png";
+import thirdParty from "./icons/thirdParty.png";
+import webApplicationDevelopment from "./icons/webApplicationDevelopment.png";
+import projectManagement from "./icons/projectManagement.png";
+import mobileApplication from "./icons/mobileApplication.png";
 export {
   bwmap,
   nepal,
   whiteabstract,
+  mobileApplication,
   worldmap,
   logo,
   logotext,
@@ -56,6 +60,7 @@ export {
   prototyping,
   github,
   close,
+  projectManagement,
   downloadHover,
   menu,
   resume,
@@ -70,7 +75,6 @@ export {
   javascript,
   nodejs,
   postgresql,
-  rubyrails,
   reactjs,
   redux,
   tailwind,
@@ -80,4 +84,7 @@ export {
   infodevelopers,
   okta,
   auth0,
+  consulting,
+  thirdParty,
+  webApplicationDevelopment,
 };

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
@@ -9,95 +9,62 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { successToast } from "./toast";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { errorToast, successToast } from "../services/toast";
+// import { successToast } from "../services/toastify.service";
 
 const Contact = () => {
-  const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    message: "",
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required("Name is required"),
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is required"),
+      message: Yup.string().required("Message is required"),
+    }),
+    onSubmit: (values) => {
+      setLoading(true);
+      emailjs
+        .send(
+          import.meta.env.VITE_REACT_APP_SERVICE,
+          import.meta.env.VITE_REACT_APP_TEMPLATE,
+
+          {
+            from_name: values.name,
+            to_name: import.meta.env.VITE_REACT_APP_TO_NAME,
+
+            from_email: values.email,
+            to_email: import.meta.env.VITE_REACT_APP_TO_EMAIL,
+            message: values.message,
+          },
+          import.meta.env.VITE_REACT_APP_PK
+        )
+        .then(
+          () => {
+            setLoading(false);
+            successToast(
+              "Thank you. I have received your message and will get back to you as soon as possible."
+            );
+
+            formik.resetForm();
+          },
+          (error) => {
+            setLoading(false);
+            console.log(error);
+            errorToast("Something went wrong. Please try again.");
+          }
+        );
+    },
   });
-  const validateForm = () => {
-    let valid = true;
-    const newErrors = {};
-
-    // Validate Name
-    if (form.name.trim() === "") {
-      newErrors.name = "Name is required";
-      valid = false;
-    }
-
-    // Validate Email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!form.email.match(emailRegex)) {
-      newErrors.email = "Invalid email address";
-      valid = false;
-    }
-
-    // Validate Message
-    if (form.message.trim() === "") {
-      newErrors.message = "Message is required";
-      valid = false;
-    }
-
-    setErrors(newErrors);
-    return valid;
-  };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setForm({ ...form, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
-
-    setLoading(true);
-
-    emailjs
-      .send(
-        "service_1xqlyg8",
-        "template_nrk8ixw",
-        {
-          from_name: form.name,
-          to_name: "Saurya Pandey",
-          from_email: form.email,
-          to_email: "sauryap77@gmail.com",
-          message: form.message,
-        },
-        "l43Ne0egSWErq3s8x"
-      )
-      .then(
-        () => {
-          setLoading(false);
-          successToast(
-            "Thank you. I have received your message and will get back to you as soon as possible."
-          );
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.log(error);
-          alert("Something went wrong. Please try again.");
-        }
-      );
-  };
 
   return (
     <div
@@ -112,8 +79,7 @@ const Contact = () => {
         <h3 className={styles.sectionHeadTextLight}>Contact.</h3>
 
         <form
-          ref={formRef}
-          onSubmit={handleSubmit}
+          onSubmit={formik.handleSubmit}
           className="mt-10 flex flex-col gap-6 font-poppins"
         >
           <label className="flex flex-col">
@@ -121,31 +87,33 @@ const Contact = () => {
             <input
               type="text"
               name="name"
-              value={form.name}
-              onChange={handleChange}
+              value={formik.values.name}
+              onChange={formik.handleChange}
               placeholder="What's your name?"
               className="bg-eerieBlack py-4 px-6
               placeholder:text-taupe
               text-timberWolf rounded-lg outline-none
               border-none font-medium"
             />
-            {errors.name && <span className="text-red-500">{errors.name}</span>}
+            {formik.touched.name && formik.errors.name && (
+              <span className="text-red-500">{formik.errors.name}</span>
+            )}
           </label>
           <label className="flex flex-col">
             <span className="text-timberWolf font-medium mb-4">Your Email</span>
             <input
               type="email"
               name="email"
-              value={form.email}
-              onChange={handleChange}
+              value={formik.values.email}
+              onChange={formik.handleChange}
               placeholder="What's your email?"
               className="bg-eerieBlack py-4 px-6
               placeholder:text-taupe
               text-timberWolf rounded-lg outline-none
               border-none font-medium"
             />
-            {errors.email && (
-              <span className="text-red-500">{errors.email}</span>
+            {formik.touched.email && formik.errors.email && (
+              <span className="text-red-500">{formik.errors.email}</span>
             )}
           </label>
           <label className="flex flex-col">
@@ -155,16 +123,16 @@ const Contact = () => {
             <textarea
               rows="7"
               name="message"
-              value={form.message}
-              onChange={handleChange}
+              value={formik.values.message}
+              onChange={formik.handleChange}
               placeholder="What's your message?"
               className="bg-eerieBlack py-4 px-6
               placeholder:text-taupe
               text-timberWolf rounded-lg outline-none
               border-none font-medium resize-none"
             />
-            {errors.message && (
-              <span className="text-red-500">{errors.message}</span>
+            {formik.touched.message && formik.errors.message && (
+              <span className="text-red-500">{formik.errors.message}</span>
             )}
           </label>
 
@@ -234,7 +202,6 @@ const Contact = () => {
           >
             <LinkedInIcon style={{ fontSize: "30" }} />
           </a>
-
           <a
             href="https://github.com/sauryarajpandey"
             target="_blank"
@@ -288,7 +255,7 @@ const Contact = () => {
               height="30px"
               viewBox="100 100 286 286"
               xmlns="http://www.w3.org/2000/svg"
-              fill="#0000ff"
+              fill="#0000FF"
             >
               <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
@@ -306,7 +273,6 @@ const Contact = () => {
               </g>
             </svg>
           </a>
-
           <a
             href="https://sauryapandey.medium.com/"
             target="_blank"
@@ -354,7 +320,6 @@ const Contact = () => {
               </g>
             </svg>
           </a>
-
           <a
             href="https://instagram.com/saurya_pandey_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"
             target="_blank"

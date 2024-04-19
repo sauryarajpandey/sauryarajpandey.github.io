@@ -6,6 +6,31 @@ import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 
 // eslint-disable-next-line react/prop-types
+// const ServiceCard = ({ index, title, icon }) => {
+//   return (
+//     <motion.div
+//       variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+//       className="xs:w-[250px] w-full card-gradient p-[1px] rounded-[20px] shadow-card"
+//     >
+//       <div
+//         // eslint-disable-next-line react/no-unknown-property
+//         options={{
+//           max: 45,
+//           scale: 1,
+//           speed: 450,
+//         }}
+//         className="bg-jetLight rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
+//       >
+//         <img src={icon} alt={title} className="w-16 h-16 object-contain" />
+
+//         <h3 className="text-taupe text-[18px] font-bold text-center">
+//           {title}
+//         </h3>
+//       </div>
+//     </motion.div>
+//   );
+// };
+// eslint-disable-next-line react/prop-types
 const ServiceCard = ({ index, title, icon }) => {
   return (
     <motion.div
@@ -14,15 +39,10 @@ const ServiceCard = ({ index, title, icon }) => {
     >
       <div
         // eslint-disable-next-line react/no-unknown-property
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
+        options={{ max: 45, scale: 1, speed: 450 }}
         className="bg-jetLight rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
       >
-        <img src={icon} alt={title} className="w-16 h-16 object-contain" />
-
+        <img src={icon} alt={title} className="w-30 h-30 object-contain" />
         <h3 className="text-taupe text-[18px] font-bold text-center">
           {title}
         </h3>
@@ -30,7 +50,6 @@ const ServiceCard = ({ index, title, icon }) => {
     </motion.div>
   );
 };
-
 const About = () => {
   return (
     <div className="-mt-[6rem]">
@@ -41,24 +60,27 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
+        className="mt-6 text-taupe text-[18px] max-w-3xl leading-[30px] inline"
       >
-        I'm a mid-level Full Stack Developer with expertise in various
-        technologies such as React.js, TypeScript, Node.js, Nest.js, MongoDB,
-        and PostgreSQL. With a proven track record of successfully delivering
-        complex applications, I take ownership of the entire development
-        lifecycle, starting from design and continuing all the way to
-        post-release support. I strongly believe in the power of collaboration
-        and enjoy working as part of a team. I consistently strive to find
-        innovative ways to improve and enhance existing applications, constantly
-        seeking opportunities for growth and learning. Feel free to explore my
-        portfolio and get in touch if you have any questions or would like to
-        discuss potential collaborations. I'm excited to contribute my skills
-        and expertise to exciting projects that push the boundaries of what's
-        possible in the world of Full Stack Development.
+        As an experienced Full Stack Developer, I&apos;ve successfully delivered
+        <b> 10+ complex web applications</b> that have driven tangible business
+        impact. Proficient in{" "}
+        <b>React.js, TypeScript, Node.js, Nest.js, MongoDB, and PostgreSQL,</b>{" "}
+        I take pride in my ability to own the entire development lifecycle, from
+        design to post-release support. Leveraging my strong technical skills
+        and problem-solving mindset, I&apos;ve tackled a wide range of
+        challenges, such as optimizing a legacy codebase to improve page load
+        times by 30% and designing a fault-tolerant data pipeline that increased
+        data reliability by 90%. I &apos;m a collaborative team player who
+        thrives in fast-paced, agile environments, and I consistently seek
+        opportunities to learn and grow. Explore my portfolio to see some of my
+        work, and feel free to reach out if you have any questions or would like
+        to discuss potential collaborations. I&apos;m excited to contribute my
+        expertise to innovative projects that push the boundaries of what&apos;s
+        possible in Full Stack Development.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-20 flex flex-wrap gap-10 ">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

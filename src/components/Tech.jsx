@@ -4,8 +4,10 @@ import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
-import SchoolIcon from "@mui/icons-material/School";
+// import SchoolIcon from "@mui/icons-material/School";
 import Typography from "@mui/material/Typography";
+import Education from "./Education";
+import { Box, LinearProgress, Tooltip, Grid, Paper } from "@mui/material";
 const Tech = () => {
   const technologiesadded = [
     { name: "JAVASCRIPT", percentage: 85 },
@@ -15,59 +17,21 @@ const Tech = () => {
     { name: "REACTJS", percentage: 85 },
     { name: "NODE JS", percentage: 80 },
     { name: "MONGODB", percentage: 70 },
-    { name: "DOCKER", percentage: 50 },
+    { name: "DOCKER", percentage: 65 },
     { name: "PostgreSQL", percentage: 70 },
   ];
-
   return (
     <>
       <motion.div variants={textVariant()}>
-        <div className={styles.sectionHeadTextLight}>
-          Education
-          <Typography
-            variant="h5"
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            <b>
-              <a
-                href="https://vit.ac.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  textDecoration: "none",
-                }}
-              >
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Vellore_Institute_of_Technology_seal_2017.svg/800px-Vellore_Institute_of_Technology_seal_2017.svg.png"
-                  alt="VIT Logo"
-                  style={{
-                    width: "85px",
-                    height: "auto",
-                    marginRight: "10px",
-                    filter: "drop-shadow(2px 2px 4px #4F80CF)",
-
-                    padding: "1px",
-                  }}
-                />
-                <u>Vellore Institute of Technology (2018-2022)</u>
-              </a>
-            </b>
-          </Typography>
-          <Typography variant="h6">
-            <div style={{ marginLeft: "90px" }}>
-              <SchoolIcon style={{ fontSize: 40, marginRight: "10px" }} />{" "}
-              Bachelor&apos;s in Computer Science and Engineering
-            </div>
-          </Typography>
+        <div className="bg-experience bg-cover bg-center bg-no-repeat rounded-tl-[150px] rounded-br-[150px]">
+          <div className="bg-experienceLight bg-cover bg-center bg-no-repeat rounded-tl-[150px] rounded-br-[150px]">
+            <Education />
+          </div>
         </div>
-        <br></br>
-        <br></br>
-        <p className={styles.sectionSubTextLight}>My skills</p>
-        <h2 className={styles.sectionHeadTextLight}>Technologies.</h2>
+        <br />
+        <br />
       </motion.div>
-
+      <Typography className={styles.sectionSubTextLight}>My skills</Typography>
       <div className="flex flex-wrap justify-center gap-10 mt-14">
         {technologies.map((technology) => (
           <div className="w-28 h-28" key={technology.name}>
@@ -75,47 +39,72 @@ const Tech = () => {
           </div>
         ))}
       </div>
-      <div className="bg-black bg-opacity-10 p-4 rounded shadow-lg mt-6">
-        <h3 className={styles.sectionHeadTextLight}>Technology Proficiency</h3>
-        {/* <ul>
+      <Box className="bg-white bg-opacity-10 p-4 rounded shadow-lg mt-10">
+        {/* <Typography className={styles.sectionSubTextLight}> */}
+        <Typography
+          className={`${styles.sectionSubTextLight} text-white-100 font-bold}`}
+        >
+          Technology Proficiency
+        </Typography>
+        <Grid container spacing={2}>
           {technologiesadded.map((technology) => (
-            <li key={technology.name} className="mb-2">
-              <div className="flex justify-between">
-                <span>{technology.name}</span>
-                <span className="font-semibold">{technology.percentage}%</span>
-              </div>
-              <div className="relative pt-1">
-                <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-teal-200">
-                  <div
-                    style={{ width: `${technology.percentage}%` }}
-                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500"
-                  ></div>
-                </div>
-              </div>
-            </li>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              key={technology.name}
+              backgroundColor="transparant"
+            >
+              <Paper
+                variant="outlined"
+                sx={{
+                  p: 2,
+                  borderColor: "white",
+                  borderWidth: 2,
+                  backgroundColor: "transparent",
+                }}
+              >
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="space-between"
+                >
+                  <Tooltip title={technology.name} placement="top">
+                    <Typography
+                      variant="subtitle1"
+                      className={`${styles.sectionSubTextLight} text-white-100 font-bold}`}
+                    >
+                      {technology.name}
+                    </Typography>
+                  </Tooltip>
+                  <Typography
+                    variant="subtitle1"
+                    fontWeight="bold"
+                    className={`${styles.sectionSubTextLight} text-white-100 font-bold}`}
+                  >
+                    {technology.percentage}%
+                  </Typography>
+                </Box>
+                <LinearProgress
+                  variant="determinate"
+                  value={technology.percentage}
+                  sx={{
+                    height: 8,
+                    borderRadius: 10,
+                    backgroundColor: "pink",
+
+                    "& .MuiLinearProgress-bar": {
+                      backgroundColor: "green",
+                    },
+                  }}
+                />
+              </Paper>
+            </Grid>
           ))}
-        </ul> */}
-        <ul>
-          {technologiesadded.map((technology) => (
-            <li key={technology.name} className="mb-2 py-2 px-4 rounded-lg">
-              <div className="flex justify-between">
-                <span>{technology.name}</span>
-                <span className="font-semibold">{technology.percentage}%</span>
-              </div>
-              <div className="relative pt-1">
-                <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-teal-200">
-                  <div
-                    style={{ width: `${technology.percentage}%` }}
-                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500"
-                  ></div>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+        </Grid>
+      </Box>
     </>
   );
 };
-
 export default SectionWrapper(Tech, "");

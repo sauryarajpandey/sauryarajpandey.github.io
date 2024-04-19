@@ -20,16 +20,20 @@
     "@mui/material": "^5.14.15",
     "@react-three/drei": "^9.66.1",
     "@react-three/fiber": "^8.13.0",
+    "formik": "^2.4.5",
     "framer-motion": "^10.12.5",
     "maath": "^0.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.0",
+    "react-sparklines": "^1.7.0",
     "react-tilt": "^1.0.2",
     "react-toastify": "^10.0.5",
     "react-vertical-timeline-component": "^3.6.0",
+    "recharts": "^2.12.5",
     "three": "^0.152.2",
-    "use": "^3.1.1"
+    "use": "^3.1.1",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
